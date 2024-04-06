@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AudioSource shotSFXSource;
 
     public Camera camera;
-
+    float nextFire = 0f;
     private void Start()
     {
         
@@ -22,8 +22,9 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
+            nextFire = Time.time + 1f / fireRate;
             Shoot();
         }
     }
