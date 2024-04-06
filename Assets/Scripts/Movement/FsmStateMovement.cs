@@ -6,12 +6,11 @@ public class FsmStateMovement : FsmState
     protected readonly Transform Transform;
     protected readonly float Speed;
 
-    public FsmStateMovement(Fsm fsm, CharacterController controller,Transform transform, float speed) : base(fsm)
+    public FsmStateMovement(Fsm fsm, CharacterController controller, Transform transform, float speed) : base(fsm)
     {
         Controller = controller;
         Transform = transform;
         Speed = speed;
-        
     }
 
     public override void Enter()
@@ -27,7 +26,7 @@ public class FsmStateMovement : FsmState
     public override void Update()
     {
         var inputDirection = ReadInput();
-             
+
         if (inputDirection.sqrMagnitude == 0f)
         {
             Fsm.SetState<FsmStateIdle>();
@@ -49,4 +48,5 @@ public class FsmStateMovement : FsmState
     {
         Controller.Move((inputDirection.y * Transform.forward + inputDirection.x * Transform.right) * Speed * Time.deltaTime);
     }
+
 }

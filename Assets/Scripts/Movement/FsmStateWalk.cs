@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class FsmStateWalk : FsmStateMovement
 {
     public FsmStateWalk(Fsm fsm, CharacterController controller, Transform transform, float speed) : base(fsm, controller,transform, speed) { }
