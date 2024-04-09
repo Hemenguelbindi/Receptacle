@@ -22,6 +22,7 @@ public class HeadBobbing : MonoBehaviour
             timer += _speedBobbing;
             float swingX = _amplitude * Mathf.Cos(timer);
             float swingY = startPosition.y + Mathf.Abs(_amplitude * Mathf.Sin(timer));
+            
 
             currentPosition = new Vector3(swingX, swingY, startPosition.z);
             transform.localPosition = currentPosition;
