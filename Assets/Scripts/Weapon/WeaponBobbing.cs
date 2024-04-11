@@ -9,7 +9,7 @@ public class WeaponBobbing : MonoBehaviour
     private float timer = 0.0f;
     public bool isIdle = true;
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         if (Mathf.Abs(Input.GetAxis("Horizontal")) == 0 || Mathf.Abs(Input.GetAxis("Vertical")) == 0)
