@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Recoil : MonoBehaviour
 {
+    public Transform cam;
+
     private Vector3 currentRotation;
     private Vector3 targetRotation;
 
@@ -12,11 +14,14 @@ public class Recoil : MonoBehaviour
     [SerializeField] private float _snappiness;
     [SerializeField] private float _returnSpeed;
 
+   
+
     private void Update()
     {
         targetRotation = Vector3.Lerp(targetRotation, Vector3.zero, _returnSpeed * Time.deltaTime);
         currentRotation = Vector3.Slerp(currentRotation, targetRotation, _snappiness * Time.fixedDeltaTime);
         transform.localRotation = Quaternion.Euler(currentRotation);
+        cam.transform.localRotation = Quaternion.Euler(currentRotation);
     }
 
     public void RecoilFire()

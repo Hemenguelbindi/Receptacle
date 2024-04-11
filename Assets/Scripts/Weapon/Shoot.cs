@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
 
     public Recoil recoil;
 
+    public Reload reload;
+
     private float _nextFireTime;
 
     private void Awake()
@@ -26,11 +28,12 @@ public class Shoot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && Time.time >= _nextFireTime)
+        if (Input.GetMouseButton(0) && Time.time >= _nextFireTime && reload.ammo > 0)
         {
             Shooting();
             recoil.RecoilFire();
             audioSource.PlayOneShot(clip);
+            reload.reloading();
 
             _nextFireTime = Time.time + _fireRate;
         }
@@ -48,11 +51,13 @@ public class Shoot : MonoBehaviour
             Debug.Log(hit.collider.gameObject.name);
             Debug.Log("Урон");
             hole = Instantiate(effect[0], hit.point, Quaternion.identity);
+            Destroy(hole, 1f);
         }
         else if (Physics.Raycast(ray, out hit, _range, layerMask[1]))
         {
             Debug.Log("Мимо");
-            hole = Instantiate(effect[1], hit.point , Quaternion.identity);
+            hole = Instantiate(effect[1], hit.point, Quaternion.identity);
+            Destroy(hole, 1f);
         }
     }
 }
