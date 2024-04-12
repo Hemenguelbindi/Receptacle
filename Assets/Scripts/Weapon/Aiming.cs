@@ -22,7 +22,7 @@ public class Aiming : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            aimWeaponPosition = new Vector3(-0.145f, 0.055f, 0f);
+            aimWeaponPosition = new Vector3(-0.145f, 0.055f, -0.04f);
             transform.localPosition = aimWeaponPosition;
             crossHair.SetActive(false);
             bobbing.isIdle = false;
