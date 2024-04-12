@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour, IMenuui
+public class MainMenu : MonoBehaviour
 {
     public void PlayerGame()
     {
