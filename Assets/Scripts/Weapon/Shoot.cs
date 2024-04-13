@@ -19,6 +19,8 @@ public class Shoot : MonoBehaviour
 
     public Reload reload;
 
+    public CameraShake shake;
+
     private float _nextFireTime;
 
     private void Awake()
@@ -34,6 +36,7 @@ public class Shoot : MonoBehaviour
             recoil.RecoilFire();
             audioSource.PlayOneShot(clip);
             reload.reloading();
+            shake.ShakeCamera();
 
             _nextFireTime = Time.time + _fireRate;
         }
