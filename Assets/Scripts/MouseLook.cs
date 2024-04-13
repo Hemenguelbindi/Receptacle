@@ -4,7 +4,7 @@ public class MouseLook : MonoBehaviour
 {
     [SerializeField] Transform body;
 
-    //Параметры мыши
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     [Header("Mouse")]
     [SerializeField, Range(0f, 250f)] float _sensitivityX;
     [SerializeField, Range(0f, 250f)] float _sensitivityY;
@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
 
     Vector2 _rotation;
 
-    //параметры ограничения поворота по оси Y
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ Y
     [Header("Clamp")]
     [SerializeField, Range(0f, -90f)] float _min;
     [SerializeField, Range(0f, 90f)] float _max;
@@ -25,7 +25,7 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         _mouseX = Input.GetAxis("Mouse X") * _sensitivityX * Time.deltaTime;
         _mouseY = Input.GetAxis("Mouse Y") * _sensitivityY * Time.deltaTime;
