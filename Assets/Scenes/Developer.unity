@@ -1917,6 +1917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 4336217772304269929, guid: 0126facdd75e0884a8afd7fa031cfa94,
+        type: 3}
+      propertyPath: _kickBackZ
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 5624208865429250232, guid: 0126facdd75e0884a8afd7fa031cfa94,
         type: 3}
       propertyPath: crossHair
