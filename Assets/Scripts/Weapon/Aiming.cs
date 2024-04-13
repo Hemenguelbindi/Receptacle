@@ -6,7 +6,8 @@ public class Aiming : MonoBehaviour
     Vector3 startWeaponPosition;
 
     public GameObject crossHair;
-
+    public WeaponBobbing bobbing;
+    
     private void Start()
     {
         startWeaponPosition = transform.localPosition;
@@ -21,14 +22,16 @@ public class Aiming : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            aimWeaponPosition = new Vector3(-0.145f, 0.055f, 0f);
+            aimWeaponPosition = new Vector3(-0.145f, 0.055f, -0.06f);
             transform.localPosition = aimWeaponPosition;
             crossHair.SetActive(false);
+            bobbing.isIdle = false;
         }
         if (Input.GetMouseButtonUp(1))
         {
             transform.localPosition = startWeaponPosition;
             crossHair.SetActive(true);
+            bobbing.isIdle = true;
         }
     }
 }

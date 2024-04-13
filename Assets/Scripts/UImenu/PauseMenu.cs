@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour, IMenuui
+public class PauseMenu : MonoBehaviour
 {
     public void ExitGame()
     {
