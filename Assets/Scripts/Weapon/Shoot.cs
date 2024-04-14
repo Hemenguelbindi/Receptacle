@@ -4,7 +4,6 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] float _damage;
     [SerializeField] float _range;
-    [SerializeField] float _spread;
     [SerializeField] float _fireRate = 0.1f;
 
     public GameObject[] effect;
@@ -23,19 +22,22 @@ public class Shoot : MonoBehaviour
 
     private float _nextFireTime;
 
+    public bool isShooting;
+
     private void Awake()
     {
         camera = Camera.main;
+        isShooting = true;
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && Time.time >= _nextFireTime && reload.ammo > 0)
+        if (Input.GetMouseButton(0) && isShooting && Time.time >= _nextFireTime && reload.ammo > 0)
         {
             Shooting();
             recoil.RecoilFire();
             audioSource.PlayOneShot(clip);
-            reload.reloading();
+            reload.Reloading();
             shake.ShakeCamera();
 
             _nextFireTime = Time.time + _fireRate;

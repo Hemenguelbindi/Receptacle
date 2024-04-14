@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HeadBobbing : MonoBehaviour
 {
-    [SerializeField] float _amplitude = 0.12f;
+    public float _amplitude = 0.12f;
     [SerializeField] float _speedBobbing = 0.1f;
     [SerializeField] float _speedReturn = 5f;
 
@@ -21,8 +21,8 @@ public class HeadBobbing : MonoBehaviour
         {
             //timer += _speedBobbing;
             float swingX = _amplitude * Mathf.Cos(Time.timeSinceLevelLoad * _speedBobbing);
-            float swingY = startPosition.y + Mathf.Abs(_amplitude * Mathf.Sin(Time.timeSinceLevelLoad*_speedBobbing));
-            
+            float swingY = startPosition.y + Mathf.Abs(_amplitude * Mathf.Sin(Time.timeSinceLevelLoad * _speedBobbing));
+
 
             currentPosition = new Vector3(swingX, swingY, startPosition.z);
             transform.localPosition = currentPosition;
@@ -35,7 +35,7 @@ public class HeadBobbing : MonoBehaviour
 
         //if (timer > Mathf.PI * 2)
         //{
-          //  timer = 0.0f;
+        //  timer = 0.0f;
         //}
     }
 
