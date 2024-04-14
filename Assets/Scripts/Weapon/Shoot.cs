@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] float _damage;
+    [SerializeField] float _damage = 15;
     [SerializeField] float _range;
     [SerializeField] float _fireRate = 0.1f;
 
@@ -11,6 +11,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] LayerMask[] layerMask;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clip;
+    
+    Enemy enemy;
 
     Camera camera;
 
@@ -55,6 +57,11 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log(hit.collider.gameObject.name);
             Debug.Log("Урон");
+            enemy = hit.collider.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(_damage);
+            }
             hole = Instantiate(effect[0], hit.point, Quaternion.identity);
             Destroy(hole, 1f);
         }
