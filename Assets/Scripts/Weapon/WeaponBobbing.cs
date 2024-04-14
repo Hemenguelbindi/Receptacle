@@ -1,13 +1,24 @@
+using System;
 using UnityEngine;
 
 public class WeaponBobbing : MonoBehaviour
 {
     [SerializeField] float bobbingSpeed = 0.18f;
     [SerializeField] float bobbingAmount = 0.2f;
-    [SerializeField] float midpoint = 2.0f;
+    float midpoint = 0f;
 
     private float timer = 0.0f;
     public bool isIdle = true;
+
+    [NonSerialized]
+    public Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.localPosition;
+    }
+
+
 
     private void FixedUpdate()
     {
@@ -15,7 +26,7 @@ public class WeaponBobbing : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("Horizontal")) == 0 || Mathf.Abs(Input.GetAxis("Vertical")) == 0)
         {
             if (isIdle)
-            StateIdle();
+                StateIdle();
         }
 
     }
