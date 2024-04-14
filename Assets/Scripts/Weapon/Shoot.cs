@@ -57,11 +57,13 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log(hit.collider.gameObject.name);
             Debug.Log("Урон");
+
             enemy = hit.collider.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(_damage);
             }
+
             hole = Instantiate(effect[0], hit.point, Quaternion.identity);
             Destroy(hole, 1f);
         }
