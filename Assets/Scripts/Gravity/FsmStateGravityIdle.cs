@@ -10,6 +10,7 @@ public class FsmStateGravityIdle : FsmStateGravity
     {
        if(!GroundChecker.instance.isGrounded)
         {
+
             FsmGravity.SetState<FsmStateGravityMove>();
         }
     }
