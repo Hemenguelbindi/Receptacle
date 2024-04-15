@@ -1168,6 +1168,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283326562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7588914640290258831, guid: 573cbb24fd1cb704f850460b15d40248,
+    type: 3}
+  m_PrefabInstance: {fileID: 8515303181519345050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb63a67a66493146858d0868b632951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1483439344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1945,6 +1957,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4320998428555437699, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: _smooth
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 5315192220102428502, guid: 573cbb24fd1cb704f850460b15d40248,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1994,6 +2011,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340980003056865514, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: headBobbing
+      value: 
+      objectReference: {fileID: 1283326562}
+    - target: {fileID: 7468017691344727477, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468017691344727477, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: currentAmmo
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499172623791377982, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: bobbingSpeed
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499172623791377982, guid: 573cbb24fd1cb704f850460b15d40248,
+        type: 3}
+      propertyPath: bobbingAmount
+      value: 0.004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
