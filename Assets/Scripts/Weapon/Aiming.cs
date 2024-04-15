@@ -8,7 +8,6 @@ public class Aiming : MonoBehaviour
     public GameObject crossHair;
     public WeaponBobbing bobbing;
     public HeadBobbing headBobbing;
-    
     private void Start()
     {
         startWeaponPosition = transform.localPosition;
@@ -29,7 +28,6 @@ public class Aiming : MonoBehaviour
             bobbing.isIdle = false;
             bobbing.transform.localPosition = bobbing.startPosition;
             headBobbing._amplitude = 0.002f;
-            
         }
         if (Input.GetMouseButtonUp(1))
         {

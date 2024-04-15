@@ -5,18 +5,38 @@ using UnityEngine;
 public class Reload : MonoBehaviour
 {
     public Shoot shoot;
+    public Animator controller;
 
     public int ammo = 30;
     public int maxAmmo = 120;
 
+    public float timer;
+
     public float timeReload;
+
+    bool isReloading = false;
 
     [SerializeField] TextMeshProUGUI textAmmo;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && ammo != 30)
+
+        if (isReloading)
         {
+            timer += Time.deltaTime;
+
+            if (timer >= timeReload)
+            {
+                controller.SetBool("isReload", false);
+                isReloading = false;
+                timer = 0;
+            }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.R) && ammo != 30 && !isReloading)
+        {
+            controller.SetBool("isReload", true);
+            isReloading = true;
             StartCoroutine(StatsReloading());
         }
 
@@ -36,9 +56,6 @@ public class Reload : MonoBehaviour
         ammo += ammoToAdd;
 
         maxAmmo = Mathf.Max(0, maxAmmo - ammoToAdd);
-
-        yield return new WaitForSeconds(0.1f);
-
     }
 
     public void Reloading()
@@ -48,6 +65,4 @@ public class Reload : MonoBehaviour
             ammo--;
         }
     }
-
-
 }
