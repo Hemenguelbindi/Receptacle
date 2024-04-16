@@ -31,7 +31,6 @@ public class MouseLook : MonoBehaviour
         _mouseY = Input.GetAxis("Mouse Y") * _sensitivityY * Time.deltaTime;
 
         RotateCamera(_mouseX, _mouseY);
-
     }
 
     private void RotateCamera(float x, float y)

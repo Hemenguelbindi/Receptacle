@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
     void SetDestination()
     {
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(previousPlayerPosition);
         previousPlayerPosition = player.transform.position;
     }
 
