@@ -1,3 +1,4 @@
+using Lean.Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,8 @@ public class Enemy : MonoBehaviour
         
         if (currentHealth < 0)
         {
-            Destroy(enemy);
+            LeanPool.Despawn(enemy);
+            //Destroy(enemy);
         }
     }
 }

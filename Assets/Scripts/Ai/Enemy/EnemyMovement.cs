@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 
 public class EnemyMovement : MonoBehaviour
 {
+
     [SerializeField] GameObject player; // —сылка на игрока или его коллайдер
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
     [SerializeField] float attackRange = 2f;
-    Vector3 previousTargetPosition;
 
     private void Start()
     {
