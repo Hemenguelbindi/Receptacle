@@ -1,16 +1,15 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.AI;
+
 
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] GameObject player; // Ссылка на игрока или его коллайдер
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
     [SerializeField] float attackRange = 2f;
-    Vector3 previousTargetPosition;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         SetDestination();
@@ -18,11 +17,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (player == null) // Проверяем, что игрок существует
+        if (GameAdmin.Instance.GetPlayer().position == null) 
             return;
 
-        // Проверяем, изменилась ли позиция игрока, и только в этом случае обновляем путь
-        if (player.transform.position != previousPlayerPosition)
+
+        if (GameAdmin.Instance.GetPlayer().position != previousPlayerPosition)
         {
             SetDestination();
         }
@@ -30,13 +29,13 @@ public class EnemyMovement : MonoBehaviour
 
     void SetDestination()
     {
+        previousPlayerPosition = GameAdmin.Instance.GetPlayer().position;
         agent.SetDestination(previousPlayerPosition);
-        previousPlayerPosition = player.transform.position;
     }
+
 
     void Attack()
     {
-        // Здесь ты можешь реализовать логику атаки
         Debug.Log("Enemy is attacking!");
     }
 }

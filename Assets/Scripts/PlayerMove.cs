@@ -39,11 +39,13 @@ namespace Script.Move
         [NonSerialized]
         public float vertical;
 
+
         private void Start()
         {
             _currentSpeed = _walkSpeed;
 
             controller = GetComponent<CharacterController>();
+
         }
 
         private void Update()
