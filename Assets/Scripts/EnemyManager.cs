@@ -1,6 +1,8 @@
+using Lean.Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -27,7 +29,8 @@ public class EnemyManager : MonoBehaviour
             int randomPoint = Random.Range(0, m_Spawne.Length);
 
             // Спауним врага
-            Instantiate(m_EnemyPrefab, m_Spawne[randomPoint].position, Quaternion.identity);
+            LeanPool.Spawn(m_EnemyPrefab, m_Spawne[randomPoint].position, Quaternion.identity);
+            //Instantiate(m_EnemyPrefab, m_Spawne[randomPoint].position, Quaternion.identity);
 
             // Увеличиваем счетчик заспауненных врагов
             m_CurrentSpawned++;
