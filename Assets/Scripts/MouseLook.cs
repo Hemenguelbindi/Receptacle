@@ -25,13 +25,12 @@ public class MouseLook : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         _mouseX = Input.GetAxis("Mouse X") * _sensitivityX * Time.deltaTime;
         _mouseY = Input.GetAxis("Mouse Y") * _sensitivityY * Time.deltaTime;
 
         RotateCamera(_mouseX, _mouseY);
-
     }
 
     private void RotateCamera(float x, float y)

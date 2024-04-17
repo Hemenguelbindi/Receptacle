@@ -18,6 +18,9 @@ public class Reload : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI textAmmo;
 
+    public AudioClip reload;
+    public AudioSource reloadSource;
+
     private void Update()
     {
 
@@ -35,8 +38,10 @@ public class Reload : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.R) && ammo != 30 && !isReloading)
         {
+            reloadSource.PlayOneShot(reload);
             controller.SetBool("isReload", true);
             isReloading = true;
+            reloadSource.PlayOneShot(reload);
             StartCoroutine(StatsReloading());
         }
 
@@ -46,7 +51,7 @@ public class Reload : MonoBehaviour
     public IEnumerator StatsReloading()
     {
         int ammoToAdd = Mathf.Min(maxAmmo, 30 - ammo);
-
+               
         shoot.isShooting = false;
 
         yield return new WaitForSeconds(timeReload);
