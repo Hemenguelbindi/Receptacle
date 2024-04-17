@@ -36,12 +36,12 @@ public class Reload : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.R) && ammo != 30 && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && ammo != 30 && !isReloading)
         {
             reloadSource.PlayOneShot(reload);
-            controller.SetBool("isReload", true);
             isReloading = true;
             reloadSource.PlayOneShot(reload);
+            controller.SetBool("isReload", true);
             StartCoroutine(StatsReloading());
         }
 
@@ -51,7 +51,7 @@ public class Reload : MonoBehaviour
     public IEnumerator StatsReloading()
     {
         int ammoToAdd = Mathf.Min(maxAmmo, 30 - ammo);
-               
+
         shoot.isShooting = false;
 
         yield return new WaitForSeconds(timeReload);
