@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 782094692723686387}
   - component: {fileID: 2064574314519884505}
   - component: {fileID: 420715216523501809}
+  - component: {fileID: 5451383990547965625}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -98,6 +99,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: []
+--- !u!114 &5451383990547965625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3603815914236125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557b3eca6aff35241aed2dd7aba0e016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  currentArmor: 0
+  character: {fileID: 3603815914236125}
+  textHelth: {fileID: 0}
+  textArmor: {fileID: 0}
 --- !u!1 &2305220222173931070
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +559,7 @@ MonoBehaviour:
     m_Bits: 9
   audioSource: {fileID: 7044576552543706778}
   clip: {fileID: 8300000, guid: 032bf6e20dc0bf4449b44cac2427aea2, type: 3}
+  health: []
   recoil: {fileID: 2291218490598886406}
   reload: {fileID: 7340967498643740196}
   shake: {fileID: 2451610423789442769}
@@ -560,6 +579,7 @@ MonoBehaviour:
   shoot: {fileID: 4876669766103181393}
   controller: {fileID: 0}
   ammo: 1000
+  currentAmmo: 0
   maxAmmo: 70
   timer: 0
   timeReload: 3
@@ -776,6 +796,7 @@ MonoBehaviour:
     m_Bits: 9
   audioSource: {fileID: 837722403905357039}
   clip: {fileID: 8300000, guid: 2dfd1f98a09d0e74f8849064c8f650b8, type: 3}
+  health: []
   recoil: {fileID: 4336217772304269929}
   reload: {fileID: 9102092710069886439}
   shake: {fileID: 0}
@@ -795,6 +816,7 @@ MonoBehaviour:
   shoot: {fileID: 0}
   controller: {fileID: 0}
   ammo: 30
+  currentAmmo: 0
   maxAmmo: 120
   timer: 0
   timeReload: 2

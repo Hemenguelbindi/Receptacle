@@ -1,6 +1,4 @@
 using Lean.Pool;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -19,7 +17,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(damage);
         currentHealth -= damage;
-        
+
         if (currentHealth < 0)
         {
             LeanPool.Despawn(enemy);
