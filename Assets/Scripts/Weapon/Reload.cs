@@ -7,8 +7,10 @@ public class Reload : MonoBehaviour
     public Shoot shoot;
     public Animator controller;
 
-    public int ammo = 30;
-    public int maxAmmo = 120;
+    public int ammo;
+    public int currentAmmo;
+
+    public int maxAmmo;
 
     public float timer;
 
@@ -20,6 +22,11 @@ public class Reload : MonoBehaviour
 
     public AudioClip reload;
     public AudioSource reloadSource;
+
+    private void Start()
+    {
+        currentAmmo = ammo;
+    }
 
     private void Update()
     {
@@ -36,7 +43,7 @@ public class Reload : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && ammo != 30 && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != ammo && !isReloading)
         {
             reloadSource.PlayOneShot(reload);
             isReloading = true;
@@ -45,12 +52,12 @@ public class Reload : MonoBehaviour
             StartCoroutine(StatsReloading());
         }
 
-        textAmmo.text = ammo + "/" + maxAmmo;
+        textAmmo.text = currentAmmo + "/" + maxAmmo;
     }
 
     public IEnumerator StatsReloading()
     {
-        int ammoToAdd = Mathf.Min(maxAmmo, 30 - ammo);
+        int ammoToAdd = Mathf.Min(maxAmmo, ammo - currentAmmo);
 
         shoot.isShooting = false;
 
@@ -58,16 +65,16 @@ public class Reload : MonoBehaviour
 
         shoot.isShooting = true;
 
-        ammo += ammoToAdd;
+        currentAmmo += ammoToAdd;
 
         maxAmmo = Mathf.Max(0, maxAmmo - ammoToAdd);
     }
 
     public void Reloading()
     {
-        if (ammo != 0)
+        if (currentAmmo != 0)
         {
-            ammo--;
+            currentAmmo--;
         }
     }
 }
