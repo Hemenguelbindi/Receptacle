@@ -5,22 +5,19 @@ using Zenject;
 
 
 
-
 public class EnemyMovement : MonoBehaviour
 {
-
-    
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
+    [SerializeField] float attackRange = 2f;
+
     private PlayerMove Hero;
-    private Health HealthHero;
-    private Attack attackState;
 
     [Inject]
-    private void Constract(PlayerMove hero, Health health)
+    private void Constract(PlayerMove hero)
     {
         Hero = hero;
-        HealthHero = health;
+        //Debug.Log(Hero);
     }
 
     private void Awake()
@@ -39,11 +36,7 @@ public class EnemyMovement : MonoBehaviour
         {
             SetDestination();
         }
-        
     }
-
-
-   
 
     void SetDestination()
     {
@@ -51,4 +44,9 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(previousPlayerPosition);
     }
 
+
+    void Attack()
+    {
+        Debug.Log("Enemy is attacking!");
+    }
 }

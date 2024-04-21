@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/EnemyEval.meta
+guid: 1e58749e9e87859468a435eb91cbaa99
+folderAsset: yes
+DefaultImporter:
+========
 guid: b1f0a6b9f1039054d937363184264683
 PrefabImporter:
+>>>>>>>> 0d286f8711246251e36514393ba8234c43e74189:Assets/Prefabs/KusKusNewPref.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -17,16 +17,13 @@ public class EnemyManager : MonoBehaviour
 
     private DiContainer diContainer;
     private PlayerMove Hero;
-    private Health HeroHealth;
-   
 
     [Inject]
-    private void Constract(DiContainer dicontainer, PlayerMove hero, Health health)
+    private void Constract(DiContainer dicontainer, PlayerMove hero)
     {
         diContainer = dicontainer;
         Hero = hero;
-        HeroHealth = health;
-        Debug.Log(HeroHealth);
+        Debug.Log(Hero);
     }
 
     void Start()
