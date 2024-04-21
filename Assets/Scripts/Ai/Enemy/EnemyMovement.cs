@@ -1,13 +1,27 @@
-﻿using UnityEngine;
+﻿using Script.Move;
+using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
+
 
 
 
 public class EnemyMovement : MonoBehaviour
 {
+
+    
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
-    [SerializeField] float attackRange = 2f;
+    private PlayerMove Hero;
+    private Health HealthHero;
+    private Attack attackState;
+
+    [Inject]
+    private void Constract(PlayerMove hero, Health health)
+    {
+        Hero = hero;
+        HealthHero = health;
+    }
 
     private void Awake()
     {
@@ -17,25 +31,24 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameAdmin.Instance.GetPlayer().position == null) 
+        if (Hero == null) 
             return;
 
 
-        if (GameAdmin.Instance.GetPlayer().position != previousPlayerPosition)
+        if (Vector3.Distance(Hero.transform.position, previousPlayerPosition) > 0.01f)
         {
             SetDestination();
         }
+        
     }
+
+
+   
 
     void SetDestination()
     {
-        previousPlayerPosition = GameAdmin.Instance.GetPlayer().position;
+        previousPlayerPosition = Hero.transform.position;
         agent.SetDestination(previousPlayerPosition);
     }
 
-
-    void Attack()
-    {
-        Debug.Log("Enemy is attacking!");
-    }
 }
