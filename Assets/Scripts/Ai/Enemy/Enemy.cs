@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
         
         if (currentHealth < 0)
         {
-            LeanPool.Despawn(enemy);
+            Destroy(enemy.gameObject);
         }
     }
 }

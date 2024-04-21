@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using Script.Move;
+using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 
 
@@ -9,6 +11,15 @@ public class EnemyMovement : MonoBehaviour
     Vector3 previousPlayerPosition;
     [SerializeField] float attackRange = 2f;
 
+    private PlayerMove Hero;
+
+    [Inject]
+    private void Constract(PlayerMove hero)
+    {
+        Hero = hero;
+        //Debug.Log(Hero);
+    }
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -17,11 +28,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameAdmin.Instance.GetPlayer().position == null) 
+        if (Hero == null) 
             return;
 
 
-        if (GameAdmin.Instance.GetPlayer().position != previousPlayerPosition)
+        if (Vector3.Distance(Hero.transform.position, previousPlayerPosition) > 0.01f)
         {
             SetDestination();
         }
@@ -29,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
 
     void SetDestination()
     {
-        previousPlayerPosition = GameAdmin.Instance.GetPlayer().position;
+        previousPlayerPosition = Hero.transform.position;
         agent.SetDestination(previousPlayerPosition);
     }
 

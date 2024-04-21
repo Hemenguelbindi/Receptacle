@@ -1532,7 +1532,6 @@ GameObject:
   m_Component:
   - component: {fileID: 665200888449305024}
   - component: {fileID: 4566018234568450990}
-  - component: {fileID: 55250546655044979}
   m_Layer: 7
   m_Name: MainPrefab
   m_TagString: Untagged
@@ -1583,19 +1582,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &55250546655044979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5365911357542003384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f529a8fd722ab46825da0effcc727e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hero: {fileID: 7156077731105662636}
 --- !u!1 &5441936937519403279
 GameObject:
   m_ObjectHideFlags: 0

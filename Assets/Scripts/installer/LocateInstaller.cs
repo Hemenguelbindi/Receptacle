@@ -15,7 +15,7 @@ public class LocateInstaller : MonoInstaller
     private void BindPlayer()
     {
         GameObject playerGameObject = Container.InstantiatePrefab(PlayerPrefab, StartPoint.position, Quaternion.identity, null);
-        PlayerMove playerMove = playerGameObject.GetComponent<PlayerMove>();
+        PlayerMove playerMove = playerGameObject.GetComponentInChildren<PlayerMove>();
         Container.Bind<PlayerMove>().FromInstance(playerMove).AsSingle().NonLazy();
     }
 }
