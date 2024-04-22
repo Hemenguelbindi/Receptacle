@@ -1,4 +1,6 @@
 using Lean.Pool;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
@@ -18,7 +20,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(damage);
         currentHealth -= damage;
-
+        
         if (currentHealth < 0)
         {
             Destroy(enemy.gameObject);

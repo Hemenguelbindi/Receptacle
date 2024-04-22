@@ -1,10 +1,8 @@
-using Lean.Pool;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] int _damage = 15;
+    [SerializeField] float _damage = 15;
     [SerializeField] float _range;
     [SerializeField] float _fireRate = 0.1f;
 
@@ -13,10 +11,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] LayerMask[] layerMask;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip clip;
-
+    
     Enemy enemy;
-
-    public Health[] health;
 
     Camera camera;
 
@@ -38,7 +34,7 @@ public class Shoot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && isShooting && Time.time >= _nextFireTime && reload.currentAmmo > 0)
+        if (Input.GetMouseButton(0) && isShooting && Time.time >= _nextFireTime && reload.ammo > 0)
         {
             Shooting();
             recoil.RecoilFire();
@@ -68,13 +64,14 @@ public class Shoot : MonoBehaviour
                 enemy.TakeDamage(_damage);
             }
 
-            LeanPool.Spawn(effect[0], hit.point, Quaternion.identity);
+            hole = Instantiate(effect[0], hit.point, Quaternion.identity);
+            Destroy(hole, 1f);
         }
         else if (Physics.Raycast(ray, out hit, _range, layerMask[1]))
         {
             Debug.Log("Мимо");
-            LeanPool.Spawn(effect[1], hit.point, Quaternion.identity);
+            hole = Instantiate(effect[1], hit.point, Quaternion.identity);
+            Destroy(hole, 1f);
         }
-        
     }
 }
