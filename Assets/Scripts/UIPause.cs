@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class UIPause : MonoBehaviour
@@ -7,17 +8,23 @@ public class UIPause : MonoBehaviour
     [SerializeField] private GameObject pauseGameMenu;
     
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+           
             if (PauseGame)
             {
                 Resume();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             else
             {
                 Pause();
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
             }
         }
     }

@@ -18,4 +18,5 @@ public class LocateInstaller : MonoInstaller
         PlayerMove playerMove = playerGameObject.GetComponentInChildren<PlayerMove>();
         Container.Bind<PlayerMove>().FromInstance(playerMove).AsSingle().NonLazy();
     }
+
 }

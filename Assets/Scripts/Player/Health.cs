@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 
@@ -14,20 +15,27 @@ public class Health : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI textHelth;
     [SerializeField] TextMeshProUGUI textArmor;
+    public Action<int> OnTakeDameg;
+    
+    
+    private void OnEnable()
+    {
+        OnTakeDameg += TakeDamage;    
+    }
+
+    private void OnDisable()
+    {
+        OnTakeDameg -= TakeDamage;
+    }
+
 
     private void Awake()
     {
         currentHealth = MaxHealth;
         currentArmor = 0;
-    }
-
-    private void Update()
-    {
-        if (character.gameObject.CompareTag("Player"))
-        {
-            textHelth.text = "HP : " + currentHealth.ToString();
-            textArmor.text = "Armor : Отсутвует";
-        }
+        textHelth.text = "HP : " + currentHealth.ToString();
+        textArmor.text = "Armor : Отсутвует";
+        
     }
 
     public void TakeDamage(int damage)
@@ -37,9 +45,11 @@ public class Health : MonoBehaviour
 
         currentHealth -= damage;
 
+        textHelth.text = "HP : " + currentHealth.ToString();
+        textArmor.text = "Armor : Отсутвует";
+
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
             character.SetActive(false);
         }
     }

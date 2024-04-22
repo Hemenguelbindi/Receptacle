@@ -16,12 +16,12 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log(damage);
+        //Debug.Log(damage);
         currentHealth -= damage;
 
         if (currentHealth < 0)
         {
-            Destroy(enemy.gameObject);
+            Destroy(enemy);
         }
     }
 }

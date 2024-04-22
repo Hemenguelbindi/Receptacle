@@ -10,14 +10,13 @@ public class EnemyMovement : MonoBehaviour
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
     [SerializeField] float attackRange = 2f;
-
-    private PlayerMove Hero;
+    [SerializeField] private Attack EnemyAttack;
+    private PlayerMove Hero; 
 
     [Inject]
     private void Constract(PlayerMove hero)
     {
         Hero = hero;
-        //Debug.Log(Hero);
     }
 
     private void Awake()
@@ -31,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
         if (Hero == null) 
             return;
 
-
+        
         if (Vector3.Distance(Hero.transform.position, previousPlayerPosition) > 0.01f)
         {
             SetDestination();
@@ -43,10 +42,5 @@ public class EnemyMovement : MonoBehaviour
         previousPlayerPosition = Hero.transform.position;
         agent.SetDestination(previousPlayerPosition);
     }
-
-
-    void Attack()
-    {
-        Debug.Log("Enemy is attacking!");
-    }
+  
 }
