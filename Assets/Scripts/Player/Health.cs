@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Health : MonoBehaviour
@@ -50,7 +51,9 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            character.SetActive(false);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Dead");
         }
     }
 }

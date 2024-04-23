@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
 {
     NavMeshAgent agent;
     Vector3 previousPlayerPosition;
-    [SerializeField] float attackRange = 2f;
+    [SerializeField] private Animator Animation;
     [SerializeField] private Attack EnemyAttack;
     private PlayerMove Hero; 
 
@@ -41,6 +41,7 @@ public class EnemyMovement : MonoBehaviour
     {
         previousPlayerPosition = Hero.transform.position;
         agent.SetDestination(previousPlayerPosition);
+        Animation.SetBool("StateWalk", true);
     }
   
 }
