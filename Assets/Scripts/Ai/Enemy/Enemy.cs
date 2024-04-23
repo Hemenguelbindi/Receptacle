@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float MaxHealth = 100;
     [SerializeField] float currentHealth;
     [SerializeField] GameObject enemy;
+    [SerializeField] Animator animator;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth < 0)
         {
+            animator.SetBool("StateDeath", true);
             Destroy(enemy);
         }
     }
