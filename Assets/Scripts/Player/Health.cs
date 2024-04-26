@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    int MaxHealth = 100;
-    [SerializeField] int currentHealth;
+    public int MaxHealth = 100;
+    public int currentHealth;
 
     int maxArmor = 0;
     [SerializeField] int currentArmor;
@@ -17,11 +17,11 @@ public class Health : MonoBehaviour
     [SerializeField] TextMeshProUGUI textHelth;
     [SerializeField] TextMeshProUGUI textArmor;
     public Action<int> OnTakeDameg;
-    
-    
+
+
     private void OnEnable()
     {
-        OnTakeDameg += TakeDamage;    
+        OnTakeDameg += TakeDamage;
     }
 
     private void OnDisable()
@@ -34,9 +34,12 @@ public class Health : MonoBehaviour
     {
         currentHealth = MaxHealth;
         currentArmor = 0;
+    }
+
+    private void Update()
+    {
         textHelth.text = "HP : " + currentHealth.ToString();
         textArmor.text = "Armor : Отсутвует";
-        
     }
 
     public void TakeDamage(int damage)

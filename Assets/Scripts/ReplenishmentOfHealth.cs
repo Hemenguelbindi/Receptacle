@@ -1,14 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class ReplenishmentOfAmmunition : MonoBehaviour
+public class ReplenishmentOfHealth : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public Reload ammo;
+    public Health health;
 
     private void Start()
     {
-        ammo = FindAnyObjectByType<Reload>();
+        health = FindAnyObjectByType<Health>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,9 +25,9 @@ public class ReplenishmentOfAmmunition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.F) && ammo.currentMaxAmmo < ammo.maxAmmo)
+            if (Input.GetKeyDown(KeyCode.F) && health.currentHealth < health.MaxHealth)
             {
-                ammo.currentMaxAmmo = ammo.maxAmmo;
+                health.currentHealth = health.MaxHealth;
             }
         }
     }
@@ -39,5 +39,4 @@ public class ReplenishmentOfAmmunition : MonoBehaviour
             text.gameObject.SetActive(false);
         }
     }
-
 }

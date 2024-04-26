@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 263692722877628315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.741, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -343,6 +343,7 @@ MonoBehaviour:
   ammo: 30
   currentAmmo: 0
   maxAmmo: 120
+  currentMaxAmmo: 0
   timer: 0
   timeReload: 4.5
   textAmmo: {fileID: 3760530527054344869}
@@ -533,7 +534,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6532347309151427844
 CanvasRenderer:
@@ -1038,7 +1039,6 @@ GameObject:
   - component: {fileID: 3427170602839625336}
   - component: {fileID: 4267967359042204994}
   - component: {fileID: 8420746349561081030}
-  - component: {fileID: 8175149271825759847}
   m_Layer: 7
   m_Name: PlayerController
   m_TagString: Player
@@ -1139,24 +1139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b64bc46ac32fb41ad94f2bd747b2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   currentHealth: 0
   currentArmor: 0
   character: {fileID: 2611151099899134736}
   textHelth: {fileID: 448730078638143768}
   textArmor: {fileID: 8560721076643489655}
---- !u!114 &8175149271825759847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2611151099899134736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53893232e0325b146b72c5e107f755ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slopeAngle: 20
 --- !u!1 &2740165803335774823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,10 +1407,11 @@ MonoBehaviour:
   ammo: 7
   currentAmmo: 0
   maxAmmo: 70
+  currentMaxAmmo: 0
   timer: 0
-  timeReload: 3.5
+  timeReload: 4
   textAmmo: {fileID: 3760530527054344869}
-  reload: {fileID: 8300000, guid: 0b257a4793f0ea14f9429c7e5a374401, type: 3}
+  reload: {fileID: 8300000, guid: 53b953193885b8949b5fce9733bb5abe, type: 3}
   reloadSource: {fileID: 4545402914877231414}
 --- !u!114 &4521321336809889381
 MonoBehaviour:

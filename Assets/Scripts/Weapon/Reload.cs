@@ -11,6 +11,7 @@ public class Reload : MonoBehaviour
     public int currentAmmo;
 
     public int maxAmmo;
+    public int currentMaxAmmo;
 
     public float timer;
 
@@ -26,6 +27,7 @@ public class Reload : MonoBehaviour
     private void Start()
     {
         currentAmmo = ammo;
+        currentMaxAmmo = maxAmmo;
     }
 
     private void Update()
@@ -52,12 +54,12 @@ public class Reload : MonoBehaviour
             StartCoroutine(StatsReloading());
         }
 
-        textAmmo.text = currentAmmo + "/" + maxAmmo;
+        textAmmo.text = currentAmmo + "/" + currentMaxAmmo;
     }
 
     public IEnumerator StatsReloading()
     {
-        int ammoToAdd = Mathf.Min(maxAmmo, ammo - currentAmmo);
+        int ammoToAdd = Mathf.Min(currentMaxAmmo, ammo - currentAmmo);
 
         shoot.isShooting = false;
 
@@ -67,7 +69,7 @@ public class Reload : MonoBehaviour
 
         currentAmmo += ammoToAdd;
 
-        maxAmmo = Mathf.Max(0, maxAmmo - ammoToAdd);
+        currentMaxAmmo = Mathf.Max(0, currentMaxAmmo - ammoToAdd);
     }
 
     public void Reloading()
