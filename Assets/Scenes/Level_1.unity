@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2111103, g: 0.058142826, b: 0.036022708, a: 1}
+  m_IndirectSpecularColor: {r: 0.21111889, g: 0.05814965, b: 0.036026325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2179,6 +2179,7 @@ MonoBehaviour:
   m_TotalWaves: 3
   m_WaveInterval: 10
   m_EnemySpawnInterval: 0.5
+  nextSceneName: 
 --- !u!4 &242577674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 958910540779893076, guid: 6ed76e716fbfae048ac5b320c0994a7f,
@@ -11815,6 +11816,32 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 410296565}
     m_Modifications:
+    - target: {fileID: 2909343745961430626, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_text
+      value: Effects
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105898245035981902, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2bd81ad05ab1da449b74fd93cd2c279c,
+        type: 3}
+    - target: {fileID: 4105898245035981902, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105898245035981902, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105898245035981902, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4483893503638640945, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
         type: 3}
       propertyPath: m_Name
@@ -11823,7 +11850,7 @@ PrefabInstance:
     - target: {fileID: 4483893503638640945, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5226352369678581055, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
         type: 3}
@@ -11984,6 +12011,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184991106496514868, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184991106496514868, guid: ba4424fa7e2459e41a0d5f4db83cfa82,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16326,6 +16363,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968440468422209402, guid: 86742e10327e939428bcf8a892f1579b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2bd81ad05ab1da449b74fd93cd2c279c,
+        type: 3}
+    - target: {fileID: 2968440468422209402, guid: 86742e10327e939428bcf8a892f1579b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968440468422209402, guid: 86742e10327e939428bcf8a892f1579b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968440468422209402, guid: 86742e10327e939428bcf8a892f1579b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5979209157280770429, guid: 86742e10327e939428bcf8a892f1579b,
         type: 3}
