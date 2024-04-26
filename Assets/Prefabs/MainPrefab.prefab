@@ -343,6 +343,7 @@ MonoBehaviour:
   ammo: 30
   currentAmmo: 0
   maxAmmo: 120
+  currentMaxAmmo: 0
   timer: 0
   timeReload: 4.5
   textAmmo: {fileID: 3760530527054344869}
@@ -1138,6 +1139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b64bc46ac32fb41ad94f2bd747b2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   currentHealth: 0
   currentArmor: 0
   character: {fileID: 2611151099899134736}
@@ -1401,15 +1403,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 5758189857792496696}
-  controller: {fileID: 0}
-  ammo: 1000
+  controller: {fileID: 7268423205781380715}
+  ammo: 7
   currentAmmo: 0
   maxAmmo: 70
+  currentMaxAmmo: 0
   timer: 0
-  timeReload: 3
+  timeReload: 4
   textAmmo: {fileID: 3760530527054344869}
-  reload: {fileID: 0}
-  reloadSource: {fileID: 0}
+  reload: {fileID: 8300000, guid: 53b953193885b8949b5fce9733bb5abe, type: 3}
+  reloadSource: {fileID: 4545402914877231414}
 --- !u!114 &4521321336809889381
 MonoBehaviour:
   m_ObjectHideFlags: 0
