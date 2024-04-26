@@ -21,17 +21,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6c70a2a967bc080459db4585c5a3cb3c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c70a2a967bc080459db4585c5a3cb3c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c70a2a967bc080459db4585c5a3cb3c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.957
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6c70a2a967bc080459db4585c5a3cb3c,
         type: 3}
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d6e823115c26b4e88e5a6b390171cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 30
   currentHealth: 0
   enemy: {fileID: 3292475132470462384}
   animator: {fileID: 6611480163074475841}
