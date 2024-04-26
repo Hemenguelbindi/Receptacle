@@ -911,6 +911,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &595612042 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4545402914877231414, guid: 2e6586b31de9f9e46a8075a3db33c423,
+    type: 3}
+  m_PrefabInstance: {fileID: 1351019806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &670735461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2611151099899134736, guid: 2e6586b31de9f9e46a8075a3db33c423,
@@ -929,11 +935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b3eca6aff35241aed2dd7aba0e016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  currentArmor: 0
-  character: {fileID: 670735461}
-  textHelth: {fileID: 0}
-  textArmor: {fileID: 0}
 --- !u!1001 &671776758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1472,15 +1473,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2033196604951510550, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: ammo
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033196604951510550, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: reload
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b257a4793f0ea14f9429c7e5a374401, type: 3}
+    - target: {fileID: 2033196604951510550, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1940558822}
+    - target: {fileID: 2033196604951510550, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: timeReload
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033196604951510550, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: reloadSource
+      value: 
+      objectReference: {fileID: 595612042}
+    - target: {fileID: 3874708240340583355, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5365911357542003384, guid: 2e6586b31de9f9e46a8075a3db33c423,
         type: 3}
       propertyPath: m_Name
       value: MainPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5758189857792496696, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: health.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7156077731105662636, guid: 2e6586b31de9f9e46a8075a3db33c423,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488644564818207139, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2243,6 +2284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 2
+  EnemyAttack: {fileID: 0}
 --- !u!195 &1896620655
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2304,11 +2346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b3eca6aff35241aed2dd7aba0e016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  currentArmor: 0
-  character: {fileID: 1896620649}
-  textHelth: {fileID: 0}
-  textArmor: {fileID: 0}
+--- !u!95 &1940558822 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7268423205781380715, guid: 2e6586b31de9f9e46a8075a3db33c423,
+    type: 3}
+  m_PrefabInstance: {fileID: 1351019806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1999316392
 GameObject:
   m_ObjectHideFlags: 0
