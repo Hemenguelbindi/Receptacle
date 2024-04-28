@@ -27,14 +27,14 @@ public class Aiming : MonoBehaviour
             crossHair.SetActive(false);
             bobbing.isIdle = false;
             bobbing.transform.localPosition = bobbing.startPosition;
-            headBobbing._amplitude = 0.002f;
+            headBobbing._amplitude = 0.003f;
         }
         if (Input.GetMouseButtonUp(1))
         {
             transform.localPosition = startWeaponPosition;
             crossHair.SetActive(true);
             bobbing.isIdle = true;
-            headBobbing._amplitude = 0.006f;
+            headBobbing._amplitude = 0.01f;
         }
     }
 }

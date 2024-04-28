@@ -8,16 +8,14 @@ public class ReplenishmentOfAmmunition : MonoBehaviour
 
     private void Start()
     {
-        ammo = FindAnyObjectByType<Reload>();
+        if(ammo == null)
+        ammo = FindFirstObjectByType<Reload>();
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             text.gameObject.SetActive(true);
-
-
         }
     }
 

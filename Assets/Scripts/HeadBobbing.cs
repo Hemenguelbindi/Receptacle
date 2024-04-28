@@ -3,7 +3,7 @@ using UnityEngine;
 public class HeadBobbing : MonoBehaviour
 {
     public float _amplitude = 0.12f;
-    [SerializeField] float _speedBobbing = 0.1f;
+    public float _speedBobbing = 0.1f;
     [SerializeField] float _speedReturn = 5f;
 
     //float timer = Mathf.PI / 2;

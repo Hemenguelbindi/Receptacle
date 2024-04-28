@@ -45,7 +45,7 @@ public class Reload : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != ammo && !isReloading)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != ammo && !isReloading && currentMaxAmmo != 0)
         {
             reloadSource.PlayOneShot(reload);
             isReloading = true;
