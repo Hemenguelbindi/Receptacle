@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -6094,7 +6094,7 @@ PrefabInstance:
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -7838,7 +7838,7 @@ PrefabInstance:
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -8843,7 +8843,7 @@ PrefabInstance:
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -10244,7 +10244,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 289215148810845236, guid: c54e8e91b43fb024787d0e5b9a54f84a,
+      objectReference: {fileID: 2701360926037330839, guid: cf71800e2299ece41ba29868c878f01a,
         type: 3}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -15451,7 +15451,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6462469383a776c44baaa35eb043bc75, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.158
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15810,8 +15810,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
+      propertyPath: nextSceneName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
+        type: 3}
       propertyPath: m_WaveInterval
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}
@@ -15852,7 +15857,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_EnemyPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 289215148810845236, guid: c54e8e91b43fb024787d0e5b9a54f84a,
+      objectReference: {fileID: 2701360926037330839, guid: cf71800e2299ece41ba29868c878f01a,
         type: 3}
     - target: {fileID: 1250286810056377278, guid: c1f1d774d79c3dc4d9e93b186343a013,
         type: 3}

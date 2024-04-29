@@ -1498,6 +1498,16 @@ PrefabInstance:
       propertyPath: reloadSource
       value: 
       objectReference: {fileID: 595612042}
+    - target: {fileID: 3427170602839625336, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: _timer
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427170602839625336, guid: 2e6586b31de9f9e46a8075a3db33c423,
+        type: 3}
+      propertyPath: _timerDown
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3874708240340583355, guid: 2e6586b31de9f9e46a8075a3db33c423,
         type: 3}
       propertyPath: m_IsActive
@@ -2283,7 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65527218469cdcd4098def58a4473a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
+  Animation: {fileID: 0}
   EnemyAttack: {fileID: 0}
 --- !u!195 &1896620655
 NavMeshAgent:

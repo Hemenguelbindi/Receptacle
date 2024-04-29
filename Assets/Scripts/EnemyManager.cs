@@ -2,7 +2,6 @@ using Lean.Pool;
 using Script.Move;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 public class EnemyManager : MonoBehaviour
@@ -13,7 +12,6 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private int m_TotalWaves = 3; // Общее количество волн
     [SerializeField] private float m_WaveInterval = 10f; // Интервал между волнами
     [SerializeField] private float m_EnemySpawnInterval = 0.5f; // Интервал между спаунами каждого врага
-    [SerializeField] private string nextSceneName; // Имя следующей сцены
 
     private int m_CurrentWave = 0;
     private int m_EnemiesSpawnedInWave = 0;
@@ -52,7 +50,7 @@ public class EnemyManager : MonoBehaviour
             }
 
             // Проверяем, все ли враги из предыдущей волны уничтожены
-            while (AnyEnemiesAlive())
+            while (GameObject.FindObjectOfType<EnemyMovement>() != null)
             {
                 yield return null;
             }
@@ -60,21 +58,6 @@ public class EnemyManager : MonoBehaviour
             m_IsSpawningWave = false;
             m_CurrentWave++;
         }
-
-        // Переход на следующую сцену после завершения всех волн
-        SceneManager.LoadScene(nextSceneName);
-    }
-
-    bool AnyEnemiesAlive()
-    {
-        foreach (var enemy in m_EnemyPrefabs)
-        {
-            if (enemy != null && enemy.gameObject.activeSelf)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     void SpawnEnemy()

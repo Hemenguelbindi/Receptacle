@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 5298358459358908757}
   - component: {fileID: 9144495704111367724}
   - component: {fileID: 2207950214811861873}
+  - component: {fileID: 41402314407454411}
   m_Layer: 7
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -364,6 +365,19 @@ MonoBehaviour:
   swayAmount: 0.02
   maxSwayAmount: 0.06
   smoothFactor: 4
+--- !u!114 &41402314407454411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992219503552051059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980ccf6dc39ed014fa3d18de7e122891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reload: {fileID: 0}
 --- !u!1 &1020474805248245082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1050,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156077731105662636}
   - component: {fileID: 801298086628243882}
+  - component: {fileID: 5896731577075523460}
   - component: {fileID: 3427170602839625336}
   - component: {fileID: 4267967359042204994}
   - component: {fileID: 8420746349561081030}
@@ -1089,6 +1104,102 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &5896731577075523460
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611151099899134736}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3427170602839625336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,12 +1216,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 3188668483155604808}
+  steps:
+  - {fileID: 8300000, guid: 560fe19c149738744bcb22614a898312, type: 3}
+  - {fileID: 8300000, guid: b979b377b1e1d8c4b8f73070a0864ec2, type: 3}
+  - {fileID: 8300000, guid: 8a35d68ed0891fa44831756b4db1f341, type: 3}
+  - {fileID: 8300000, guid: e1491c4c06c58fd48beaffc67c7c8079, type: 3}
+  bobbing:
+  - {fileID: 5354064579493112078}
+  - {fileID: 1764429870588097165}
   _walkSpeed: 7
   _runSpeed: 10
   _crouchSpeed: 2
   _jumpForce: 2
   _gravity: -25
   _groundCheckDistance: 0.4
+  _timer: 0.48
+  _timerDown: 0.1
   _isGrounded: 0
 --- !u!114 &4267967359042204994
 MonoBehaviour:
@@ -1173,7 +1294,7 @@ Transform:
   m_GameObject: {fileID: 2740165803335774823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.145, y: -0.147, z: 0.29000092}
+  m_LocalPosition: {x: 0.145, y: -0.14700001, z: 0.29000092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1337,6 +1458,7 @@ GameObject:
   - component: {fileID: 5758189857792496696}
   - component: {fileID: 2033196604951510550}
   - component: {fileID: 4521321336809889381}
+  - component: {fileID: 8917500047705335963}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -1428,6 +1550,19 @@ MonoBehaviour:
   swayAmount: 0.02
   maxSwayAmount: 0.06
   smoothFactor: 4
+--- !u!114 &8917500047705335963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2784679537264638972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d45ba7c5c54e804f8f9cc45aab756db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reload: {fileID: 0}
 --- !u!1 &3540044398333604601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crossHair: {fileID: 1528351365645956308}
   bobbing: {fileID: 1013778166359281764}
-  headBobbing: {fileID: 5354064579493112078}
+  headBobbing: {fileID: 1764429870588097165}
 --- !u!1 &4241862881825635863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,8 +2113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb63a67a66493146858d0868b632951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amplitude: 0.02
-  _speedBobbing: 5
+  _amplitude: 0.01
+  _speedBobbing: 7
   _speedReturn: 5
 --- !u!1 &6160863067802763901
 GameObject:
