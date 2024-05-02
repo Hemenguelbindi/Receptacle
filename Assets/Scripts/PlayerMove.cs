@@ -42,7 +42,7 @@ namespace Script.Move
         Vector3 directionMove = Vector3.zero;
         Vector3 velocity = Vector3.zero;
 
-        public bool _canMove { get; private set; } = true;
+        public bool _canMove = true;
         public bool _canJump { get; private set; } = true;
 
         [NonSerialized]
